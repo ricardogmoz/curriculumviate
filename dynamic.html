@@ -8,7 +8,7 @@
 
   <body>
     <h1>Pregunta 1</h1>
-    <p>¿Cuál es el nombre completo de la persona a quien corresponde este CV? (Los acentos son importantes)</p>
+    <p>¿Cuál es el nombre completo de la persona a quien corresponde este CV?</p>
     <input type="text" id="respuesta">
     <button onclick="verificarRespuesta()">Verificar</button>
 
@@ -16,7 +16,7 @@
         function verificarRespuesta() {
             const respuesta = document.getElementById("respuesta").value.toLowerCase();
 
-            if (respuesta === "José Ricardo González Mozqueda") {
+            if (respuesta === "Jose Ricardo Gonzalez Mozqueda") {
                 alert("¡Respuesta correcta!");
                 habilitarSiguiente();
             } else {
