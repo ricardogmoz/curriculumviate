@@ -8,14 +8,14 @@
 
 <body>
     <h1>Pregunta1</h1>
-    <p>¿Cuál es el nombre completo de la persona a quien corresponde este CV?</p>
+    <p>Escribe en letra el siguiente número = 2</p>
     <input type="text" id="respuesta">
     <button onclick="verificarRespuesta()">Verificar</button>
 
     <script>
         function verificarRespuesta() {
             const respuestaUsuario = document.getElementById("respuesta").value.trim().toLowerCase();
-            const respuestaCorrecta = "Jose Ricardo Gonzalez Mozqueda";
+            const respuestaCorrecta = "dos";
 
             if (respuestaUsuario === respuestaCorrecta) {
                 alert("¡Respuesta correcta!");
