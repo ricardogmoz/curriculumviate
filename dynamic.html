@@ -6,17 +6,18 @@
     <title>Dinamica</title>
 </head>
 
-  <body>
+<body>
     <h1>Pregunta</h1>
     <p>¿Cuál es el nombre completo de la persona a quien corresponde este CV?</p>
     <input type="text" id="respuesta">
     <button onclick="verificarRespuesta()">Verificar</button>
 
-    <script>
+  <script>
         function verificarRespuesta() {
-            const respuesta = document.getElementById("respuesta").value.toLowerCase();
+            const respuestaUsuario = document.getElementById("respuesta").value.trim().toLowerCase();
+            const respuestaCorrecta = "Jose Ricardo Gonzalez Mozqueda";
 
-            if (respuesta == "Jose Ricardo Gonzalez Mozqueda") {
+            if (respuesta === respuestaCorrecta) {
                 alert("¡Respuesta correcta!");
                 habilitarSiguiente();
             } else {
