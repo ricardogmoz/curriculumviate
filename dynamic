@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamica/title>
+</head>
+
+  <body>
+    <h1>Pregunta 1</h1>
+    <p>¿Cuál es el nombre completo de la persona a quien corresponde este CV? (Los acentos son importantes)</p>
+    <input type="text" id="respuesta">
+    <button onclick="verificarRespuesta()">Verificar</button>
+
+    <script>
+        function verificarRespuesta() {
+            const respuesta = document.getElementById("respuesta").value.toLowerCase();
+
+            if (respuesta === "José Ricardo González Mozqueda") {
+                alert("¡Respuesta correcta!");
+                habilitarSiguiente();
+            } else {
+                alert("Respuesta incorrecta. Inténtalo de nuevo.");
+            }
+        }
+
+        function habilitarSiguiente() {
+            // Habilitar el botón para ir a la siguiente página
+            const botonSiguiente = document.createElement("a");
+            botonSiguiente.href = "https://ricardogmoz.github.io/curriculumviate/index.html";
+            botonSiguiente.textContent = "Ir a la siguiente página";
+            document.body.appendChild(botonSiguiente);
+
+            // Deshabilitar el botón de verificar
+            const botonVerificar = document.querySelector("button");
+            botonVerificar.disabled = true;
+        }
+    </script>
+</body>
+</html>
