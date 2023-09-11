@@ -4,38 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinamica</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body>
-    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <h1>Verificación hCaptcha</h1>
+    <!-- Agrega el elemento hCaptcha -->
+    <div class="h-captcha" data-sitekey="TU_CLAVE_DE_SITIO"></div>
 
-    <div class="h-captcha" data-sitekey="57127ec4-9cc4-4da6-aea9-74b8e1f43fa2
-"></div>
-
-    <script>
-        function verificarRespuesta() {
-            const respuestaUsuario = document.getElementById("respuesta").value.trim().toLowerCase();
-            const respuestaCorrecta = "dos";
-
-            if (respuestaUsuario === respuestaCorrecta) {
-                alert("¡Respuesta correcta!");
-                habilitarSiguiente();
-            } else {
-                alert("Respuesta incorrecta. Inténtalo de nuevo.");
-            }
-        }
-
-        function habilitarSiguiente() {
-            // Habilitar el botón para ir a la siguiente página
-            const botonSiguiente = document.createElement("a");
-            botonSiguiente.href = "https://ricardogmoz.github.io/curriculumviate/index.html";
-            botonSiguiente.textContent = "Ir a la siguiente página";
-            document.body.appendChild(botonSiguiente);
-
-            // Deshabilitar el botón de verificar
-            const botonVerificar = document.querySelector("button");
-            botonVerificar.disabled = true;
-        }
-    </script>
+    <!-- Enlace al siguiente sitio web (inicialmente deshabilitado) -->
+    <a href="https://ricardogmoz.github.io/curriculumviate/index.html" id="enlace-siguiente" style="display: none;">Ir a la siguiente página</a>
 </body>
+<script>
+        // Función para habilitar el enlace después de que hCaptcha se haya completado correctamente
+        function habilitarEnlace() {
+            const enlaceSiguiente = document.getElementById("enlace-siguiente");
+            enlaceSiguiente.style.display = "block";
+        }
+
+        // Verifica hCaptcha cuando se carga la página
+        window.onload = function () {
+            hCaptcha.render("h-captcha", {
+                callback: habilitarEnlace // Llama a la función cuando se completa hCaptcha correctamente
+            });
+        };
+</script>
 </html>
