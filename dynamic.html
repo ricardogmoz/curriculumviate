@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificación</title>
+    <!-- Agrega el script de hCaptcha en tu página -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body>
     <h1>Verificación</h1>
-    <a href="https://ricardogmoz.github.io/curriculumviate/index.html" id="enlace-siguiente" style.display = "back";">Ir al CV </a>
+    <a href="https://ricardogmoz.github.io/curriculumviate/index.html" id="enlace-siguiente" style.display="block;">Ir al CV</a>
     
-    <script>
+    <!-- Agrega un formulario con hCaptcha -->
+    <form action="tu_proceso.php" method="post">
+        <!-- Otros campos del formulario aquí -->
         
-    </script>
+        <!-- Agrega el elemento div para hCaptcha -->
+        <div class="h-captcha" data-sitekey="57127ec4-9cc4-4da6-aea9-74b8e1f43fa2Y"></div>
+        
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
