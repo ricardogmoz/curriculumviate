@@ -1,6 +1,6 @@
 <?php
 // Verificar el captcha
-$secretKey = "TU_SECRET_KEY"; // Reemplaza con tu clave secreta (secret key)
+$secretKey = "57127ec4-9cc4-4da6-aea9-74b8e1f43fa2"; // Reemplaza con tu clave secreta (secret key)
 $response = $_POST['h-captcha-response'];
 
 $verifyUrl = "https://hcaptcha.com/siteverify";
